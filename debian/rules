@@ -6,6 +6,8 @@
 
 LIBDIR=usr/lib/$(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
+override_dh_auto_test:
+
 override_dh_auto_build:
 	dh_auto_build -- LIBDIR=$(LIBDIR) release pkgconfig debian/libgrilio.install debian/libgrilio-dev.install
 
