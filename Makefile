@@ -114,6 +114,7 @@ ifneq ($(strip $(DEPS)),)
 endif
 endif
 
+$(PKGCONFIG): | $(BUILD_DIR)
 $(DEBUG_OBJS): | $(DEBUG_BUILD_DIR)
 $(RELEASE_OBJS): | $(RELEASE_BUILD_DIR)
 $(COVERAGE_OBJS): | $(COVERAGE_BUILD_DIR)
