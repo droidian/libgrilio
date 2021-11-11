@@ -1,3 +1,10 @@
+libgrilio (1.0.41) unstable; urgency=low
+
+  * Increased unit test timeout to 30 sec
+  * Added dependency of pkgconfig on build dir
+
+ -- Slava Monich <slava.monich@jolla.com>  Thu, 11 Nov 2021 14:21:28 +0200
+
 libgrilio (1.0.40) unstable; urgency=low
 
   * Make library executable on RPM based systems
