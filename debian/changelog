@@ -1,3 +1,9 @@
+libgrilio (1.0.43) unstable; urgency=low
+
+  * Housekeeping
+
+ -- Slava Monich <slava.monich@jolla.com>  Tue, 23 Nov 2021 00:36:20 +0200
+
 libgrilio (1.0.41) unstable; urgency=low
 
   * Increased unit test timeout to 30 sec

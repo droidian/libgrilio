@@ -1,6 +1,6 @@
 Name: libgrilio
 
-Version: 1.0.41
+Version: 1.0.43
 Release: 0
 Summary: RIL I/O library
 License: BSD
