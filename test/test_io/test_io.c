@@ -45,7 +45,7 @@
 #include <gutil_log.h>
 #include <gutil_macros.h>
 
-#define TEST_TIMEOUT (10) /* seconds */
+#define TEST_TIMEOUT (30) /* seconds */
 
 #define RIL_REQUEST_TEST_0 (10)
 #define RIL_REQUEST_TEST_1 (11)

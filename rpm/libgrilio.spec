@@ -1,13 +1,23 @@
 Name: libgrilio
-Version: 1.0.40
+
+Version: 1.0.44
 Release: 0
 Summary: RIL I/O library
 License: BSD
-URL: https://git.sailfishos.org/mer-core/libgrilio
+URL: https://github.com/sailfishos/libgrilio
 Source: %{name}-%{version}.tar.bz2
-Requires: libglibutil >= 1.0.10
+
+%define libglibutil_version 1.0.10
+
+BuildRequires: pkgconfig
 BuildRequires: pkgconfig(glib-2.0)
-BuildRequires: pkgconfig(libglibutil) >= 1.0.10
+BuildRequires: pkgconfig(libglibutil) >= %{libglibutil_version}
+
+# license macro requires rpm >= 4.11
+BuildRequires: pkgconfig(rpm)
+%define license_support %(pkg-config --exists 'rpm >= 4.11'; echo $?)
+
+Requires: libglibutil >= %{libglibutil_version}
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 
@@ -17,7 +27,6 @@ Provides glib-based RIL I/O library
 %package devel
 Summary: Development library for %{name}
 Requires: %{name} = %{version}
-Requires: pkgconfig
 
 %description devel
 This package contains the development library for %{name}.
@@ -26,7 +35,7 @@ This package contains the development library for %{name}.
 %setup -q
 
 %build
-make LIBDIR=%{_libdir} KEEP_SYMBOLS=1 release pkgconfig
+make %{_smp_mflags} LIBDIR=%{_libdir} KEEP_SYMBOLS=1 release pkgconfig
 
 %install
 rm -rf %{buildroot}
@@ -42,6 +51,9 @@ make -C test test
 %files
 %defattr(-,root,root,-)
 %{_libdir}/%{name}.so.*
+%if %{license_support} == 0
+%license LICENSE
+%endif
 
 %files devel
 %defattr(-,root,root,-)

@@ -1,3 +1,22 @@
+libgrilio (1.0.44) unstable; urgency=low
+
+  * Fixed makefile dependencies
+
+ -- Slava Monich <slava.monich@jolla.com>  Thu, 30 Jun 2022 03:12:54 +0300
+
+libgrilio (1.0.43) unstable; urgency=low
+
+  * Housekeeping
+
+ -- Slava Monich <slava.monich@jolla.com>  Tue, 23 Nov 2021 00:36:20 +0200
+
+libgrilio (1.0.41) unstable; urgency=low
+
+  * Increased unit test timeout to 30 sec
+  * Added dependency of pkgconfig on build dir
+
+ -- Slava Monich <slava.monich@jolla.com>  Thu, 11 Nov 2021 14:21:28 +0200
+
 libgrilio (1.0.40) unstable; urgency=low
 
   * Make library executable on RPM based systems
